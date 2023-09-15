@@ -31,7 +31,7 @@ export default function HeaderNav({ autheticated = false, ...props }) {
                         <Menu onClick={() => setNavState(!isNavigationOpen)} className="absolute md:hidden left-4 hover:cursor-pointer" />
                 }
             </header>
-            <div className={"flex flex-col md:flex-row items-start md:items-center absolute z-10 md:static top-0 w-full md:w-fit h-screen md:h-fit pt-[56px] md:pt-0 ml-0 md:ml-auto transition-all " + (isNavigationOpen ? "left-0" : "left-full")}>
+            <div className={"flex flex-col md:flex-row items-start md:items-center absolute z-10 md:static top-0 w-full md:w-fit h-full md:h-fit pt-[56px] md:pt-0 ml-0 md:ml-auto transition-all " + (isNavigationOpen ? "left-0" : "left-full")}>
 
                 <NavigationMenu className="w-full md:w-fit max-w-full md:max-w-max grow-0 justify-start border-b-2 md:hidden">
                     <NavigationMenuList className={"w-full md:w-fit flex-col md:flex-row items-start md:items-center"}>
