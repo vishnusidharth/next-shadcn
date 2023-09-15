@@ -21,8 +21,8 @@ export default function HeaderNav({ autheticated = false, ...props }) {
     return (
         <nav className="flex w-full h-screen md:h-fit fixed z-[100] top-0 left-0 max-w-full flex-col md:flex-row justify-start items-start md:items-center md:shadow-sm overflow-x-hidden overflow-y-auto bg-white">
             {/* <NavigationMenu className="w-full h-screen md:h-fit max-w-full flex-col md:flex-row justify-start items-start md:items-center"> */}
-            <header className="font-medium flex justify-center px-4 py-4 relative w-full md:w-fit shadow-sm md:shadow-none">
-                <Link href="/docs" legacyBehavior passHref>
+            <header className="font-medium flex justify-center px-4 py-4 relative z-20 w-full md:w-fit shadow-sm md:shadow-none">
+                <Link href="/home" legacyBehavior passHref>
                     Logo
                 </Link>
                 {
@@ -31,12 +31,12 @@ export default function HeaderNav({ autheticated = false, ...props }) {
                         <Menu onClick={() => setNavState(!isNavigationOpen)} className="absolute md:hidden left-4 hover:cursor-pointer" />
                 }
             </header>
-            <div className={"flex flex-col md:flex-row items-start md:items-center absolute md:static top-[56px] w-full md:w-fit ml-0 md:ml-auto transition-all " + (isNavigationOpen ? "left-0" : "left-full")}>
+            <div className={"flex flex-col md:flex-row items-start md:items-center absolute z-10 md:static top-0 w-full md:w-fit h-screen md:h-fit pt-[56px] md:pt-0 ml-0 md:ml-auto transition-all " + (isNavigationOpen ? "left-0" : "left-full")}>
 
-                <NavigationMenu className="w-full md:w-fit max-w-full md:max-w-max justify-start border-b-2 md:hidden">
+                <NavigationMenu className="w-full md:w-fit max-w-full md:max-w-max grow-0 justify-start border-b-2 md:hidden">
                     <NavigationMenuList className={"w-full md:w-fit flex-col md:flex-row items-start md:items-center"}>
                         <NavigationMenuItem className="w-full md:w-fit ml-1 my-2 md:my-2">
-                            <Link href="/docs" legacyBehavior passHref>
+                            <Link href="/home" legacyBehavior passHref>
                                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                     <Home />
                                     <span className="ml-2">Home</span>
@@ -46,7 +46,7 @@ export default function HeaderNav({ autheticated = false, ...props }) {
                     </NavigationMenuList>
                 </NavigationMenu>
 
-                <NavigationMenu className="w-full md:w-fit max-w-full md:max-w-max justify-start border-b-2 md:border-none">
+                <NavigationMenu className="w-full md:w-fit max-w-full md:max-w-max grow-0 justify-start border-b-2 md:border-none">
                     {/* <NavigationMenuList>
                         <NavigationMenuItem>
                             <Link href="/docs" legacyBehavior passHref>
@@ -62,7 +62,7 @@ export default function HeaderNav({ autheticated = false, ...props }) {
                             autheticated ? 
                                 <> */}
                         <NavigationMenuItem className="w-full md:w-fit ml-1 my-2 md:my-2">
-                            <Link href="/docs" legacyBehavior passHref>
+                            <Link href="/maps" legacyBehavior passHref>
                                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                     <Map />
                                     <span className="ml-2">Map</span>
@@ -70,7 +70,7 @@ export default function HeaderNav({ autheticated = false, ...props }) {
                             </Link>
                         </NavigationMenuItem>
                         <NavigationMenuItem className="w-full md:w-fit my-2 md:my-2">
-                            <Link href="/docs" legacyBehavior passHref>
+                            <Link href="/job" legacyBehavior passHref>
                                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                     <PlusSquare />
                                     <span className="ml-2">Add Job</span>
@@ -82,7 +82,7 @@ export default function HeaderNav({ autheticated = false, ...props }) {
                             <></>
                         } */}
                         <NavigationMenuItem className="w-full md:w-fit my-2 md:my-2 hidden md:block">
-                            <Link href="/docs" legacyBehavior passHref>
+                            <Link href="/profile" legacyBehavior passHref>
                                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                     <User />
                                 </NavigationMenuLink>
@@ -91,7 +91,7 @@ export default function HeaderNav({ autheticated = false, ...props }) {
 
                     </NavigationMenuList>
                 </NavigationMenu>
-                <div className="nav-footer w-full ml-1 md:hidden">
+                <div className="flex flex-col nav-footer w-full h-screen ml-1 md:hidden">
                     <div className={"border-b-2 p-4 " + (isAuthenticated ? "hidden" : "")}>
                         <div onClick={() => setAuthState(true)} className="flex py-4">
                             <User />
