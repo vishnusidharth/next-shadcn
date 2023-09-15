@@ -28,7 +28,7 @@ export default function HeaderNav({ autheticated = false, ...props }) {
                 {
                     isNavigationOpen ?
                         <X onClick={() => setNavState(!isNavigationOpen)} className="absolute md:hidden left-4 hover:cursor-pointer" /> :
-                        <Menu onClick={() => setNavState(!isNavigationOpen)} className="absolute md:hidden right-4 hover:cursor-pointer" />
+                        <Menu onClick={() => setNavState(!isNavigationOpen)} className="absolute md:hidden left-4 hover:cursor-pointer" />
                 }
             </header>
             <div className={"flex flex-col md:flex-row items-start md:items-center absolute md:static top-[56px] w-full md:w-fit ml-0 md:ml-auto transition-all " + (isNavigationOpen ? "left-0" : "left-full")}>
