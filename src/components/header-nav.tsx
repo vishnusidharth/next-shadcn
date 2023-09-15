@@ -132,8 +132,8 @@ export default function HeaderNav({ autheticated = false, ...props }) {
                             Logout
                         </span>
                     </div>
-                    <div className="p-4 mt-auto">
-                            © 2023 . All rights reserved.
+                    <div className="p-4 fixed bottom-0">
+                        © 2023 . All rights reserved.
                     </div>
                 </div>
             </div>
