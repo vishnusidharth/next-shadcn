@@ -32,7 +32,7 @@ export default function HeaderNav({ autheticated = false, ...props }) {
                         <Menu onClick={() => setNavState(!isNavigationOpen)} className="absolute md:hidden left-4 hover:cursor-pointer" />
                 }
             </header>
-            <div className={"flex flex-col md:flex-row items-start md:items-center fixed md:static z-10 top-0 w-full md:w-fit fill-mobile-height md:!h-fit overflow-y-auto overflow-x-hidden md:overflow-hidden pt-[60px] md:pt-0 ml-0 md:ml-auto bg-white transition-all " + (isNavigationOpen ? "left-0" : "left-full")}>
+            <div className={"flex flex-col md:flex-row items-start md:items-center fixed md:static z-10 top-0 bottom-0 w-full md:w-fit md:h-fit overflow-y-auto overflow-x-hidden md:overflow-hidden pt-[60px] md:pt-0 ml-0 md:ml-auto bg-white transition-all " + (isNavigationOpen ? "left-0" : "left-full")}>
 
                 <NavigationMenu className="w-full md:w-fit max-w-full md:max-w-max grow-0 justify-start border-b-2 md:hidden">
                     <NavigationMenuList className={"w-full md:w-fit flex-col md:flex-row items-start md:items-center"}>
@@ -133,7 +133,7 @@ export default function HeaderNav({ autheticated = false, ...props }) {
                             Logout
                         </span>
                     </div>
-                    <div className="fixed bottom-0 py-4 px-5 font-normal">
+                    <div className="mt-auto py-4 px-5 w-full font-normal">
                         © 2023 . All rights reserved.
                     </div>
                 </div>
