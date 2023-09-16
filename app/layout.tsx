@@ -7,7 +7,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className='font-sans'>{children}</body>
+      <body className='font-sans text-sm'>{children}</body>
     </html>
   )
 }

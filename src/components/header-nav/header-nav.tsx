@@ -21,9 +21,9 @@ export default function HeaderNav({ autheticated = false, ...props }) {
     const [isAuthenticated, setAuthState] = useState(autheticated);
 
     return (
-        <nav className="fixed flex w-full h-fit min-h-[60px] z-[100] top-0 left-0 max-w-full items-center md:shadow-sm overflow-hidden bg-white font-medium">
+        <nav className="fixed flex w-full h-fit min-h-[60px] z-[100] top-0 left-0 max-w-full items-center md:shadow-sm overflow-hidden bg-white font-medium text-sm">
             {/* <NavigationMenu className="w-full h-screen md:h-fit max-w-full flex-col md:flex-row justify-start items-start md:items-center"> */}
-            <header className="font-medium flex justify-center px-4 py-4 relative z-20 w-full md:w-fit shadow-sm md:shadow-none mb-0.5 md:mb-0 bg-white">
+            <header className="flex justify-center px-4 py-4 relative z-20 w-full md:w-fit shadow-sm md:shadow-none mb-0.5 md:mb-0 bg-white font-medium text-base">
                 <Link href="/home" legacyBehavior passHref>
                     Logo
                 </Link>
