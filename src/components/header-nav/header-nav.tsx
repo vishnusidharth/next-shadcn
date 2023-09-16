@@ -19,10 +19,17 @@ import { useEffect, useState } from "react"
 export default function HeaderNav({ autheticated = false, ...props }) {
     const [isNavigationOpen, setNavState] = useState(false);
     const [isAuthenticated, setAuthState] = useState(autheticated);
-    let viewableHeight: Number | undefined;
-    useEffect(()=>{
-        viewableHeight = window.innerHeight;
-    },[])
+    const [viewableHeight, setViewableHeight] = useState<number | undefined>(undefined);
+    useEffect(() => {
+        setViewableHeight(window.innerHeight);
+        const handleResize = () => {
+            setViewableHeight(window.innerHeight);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [])
 
     return (
         <nav className="fixed flex w-full h-fit min-h-[60px] z-[100] top-0 left-0 max-w-full items-center md:shadow-sm overflow-hidden bg-white font-medium text-sm">
@@ -37,7 +44,7 @@ export default function HeaderNav({ autheticated = false, ...props }) {
                         <Menu onClick={() => setNavState(!isNavigationOpen)} className="absolute md:hidden left-4 hover:cursor-pointer" />
                 }
             </header>
-            <div style={{height: `${viewableHeight}px`}} className={"flex flex-col md:flex-row items-start md:items-center fixed md:static z-10 top-0 w-full md:w-fit fill-mobile-height md:!h-fit overflow-y-auto overflow-x-hidden md:overflow-hidden pt-[60px] md:pt-0 ml-0 md:ml-auto bg-white transition-all " + (isNavigationOpen ? "left-0" : "left-full")}>
+            <div style={{ height: `${viewableHeight}px` }} className={"flex flex-col md:flex-row items-start md:items-center fixed md:static z-10 top-0 w-full md:w-fit fill-mobile-height md:!h-fit overflow-y-auto overflow-x-hidden md:overflow-hidden pt-[60px] md:pt-0 ml-0 md:ml-auto bg-white transition-all " + (isNavigationOpen ? "left-0" : "left-full")}>
 
                 <NavigationMenu className="w-full md:w-fit max-w-full md:max-w-max grow-0 justify-start border-b-2 md:hidden">
                     <NavigationMenuList className={"w-full md:w-fit flex-col md:flex-row items-start md:items-center"}>
