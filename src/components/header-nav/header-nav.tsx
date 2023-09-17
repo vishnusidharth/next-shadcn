@@ -32,7 +32,7 @@ export default function HeaderNav({ autheticated = false, ...props }) {
                         <Menu onClick={() => setNavState(!isNavigationOpen)} className="absolute md:hidden left-4 hover:cursor-pointer" />
                 }
             </header>
-            <div className={"flex flex-col md:flex-row items-start md:items-center fixed md:static z-10 top-0 bottom-0 w-full md:w-fit md:h-fit overflow-y-auto overflow-x-hidden md:overflow-hidden pt-[60px] md:pt-0 ml-0 md:ml-auto bg-white transition-all " + (isNavigationOpen ? "left-0" : "left-full")}>
+            <div className={"flex flex-col md:flex-row items-start md:items-center fixed md:static z-10 inset-y-0 w-full md:w-fit md:h-fit overflow-y-auto overflow-x-hidden md:overflow-hidden pt-[60px] md:pt-0 ml-0 md:ml-auto bg-white transition-all " + (isNavigationOpen ? "left-0" : "left-full")}>
 
                 <NavigationMenu className="w-full md:w-fit max-w-full md:max-w-max grow-0 justify-start border-b-2 md:hidden">
                     <NavigationMenuList className={"w-full md:w-fit flex-col md:flex-row items-start md:items-center"}>
@@ -92,7 +92,7 @@ export default function HeaderNav({ autheticated = false, ...props }) {
 
                     </NavigationMenuList>
                 </NavigationMenu>
-                <div className="flex flex-col nav-footer w-full h-screen md:hidden">
+                <div className="flex flex-1 flex-col nav-footer w-full md:hidden">
                     <div className={"border-b-2 pl-5  " + (isAuthenticated ? "hidden" : "")}>
                         <div onClick={() => setAuthState(true)} className="flex py-4">
                             <User />
